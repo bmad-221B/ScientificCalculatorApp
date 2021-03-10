@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clearBTNPush(View view) {
         display.setText("");
+        previousCalculation.setText("");
     }
 
     public void parOpenBTNPush(View view) {
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void equalBTNPush(View view) {
         String userExp = display.getText().toString();
-
+        previousCalculation.setText(userExp);
         userExp = userExp.replaceAll(getResources().getString(R.string.divideText),"/");
         userExp = userExp.replaceAll(getResources().getString(R.string.multiplyText),"*");
 
@@ -131,6 +132,66 @@ public class MainActivity extends AppCompatActivity {
             display.setText(selection);
             display.setSelection(cursorPos-1);
         }
+    }
+
+    public void trigSinBTNPush(View view){
+        updateText("sin(");
+    }
+
+    public void trigCosBTNPush(View view){
+        updateText("cos(");
+    }
+
+    public void trigTanBTNPush(View view){
+        updateText("tan(");
+    }
+
+    public void trigArcSinBTNPush(View view){
+        updateText("arcsin(");
+    }
+
+    public void trigArcCosBTNPush(View view){
+        updateText("arccos(");
+    }
+
+    public void trigArcTanBTNPush(View view){
+        updateText("arctan(");
+    }
+
+    public void logBTNPush(View view){
+        updateText("log(");
+    }
+
+    public void naturalLogBTNPush(View view){
+        updateText("ln(");
+    }
+
+    public void squaredRootBTNPush(View view){
+        updateText("sqrt(");
+    }
+
+    public void eBTNPush(View view){
+        updateText("e");
+    }
+
+    public void piBTNPush(View view){
+        updateText("pi");
+    }
+
+    public void absoluteValueBTNPush(View view){
+        updateText("abs(");
+    }
+
+    public void isPrimeBTNPush(View view){
+        updateText("ispr(");
+    }
+
+    public void squareValueBTNPush(View view){
+        updateText("^(2)");
+    }
+
+    public void xPowerYBTNPush(View view){
+        updateText("^(");
     }
 
 }
